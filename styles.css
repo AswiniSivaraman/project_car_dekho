@@ -1,0 +1,6 @@
+/* styles.css */
+.main .block-container {
+    padding-top: 1.5rem;
+    padding-left: 0rem;  /* Adjust this value to reduce space between sidebar and main content */
+    padding-right: 5rem;  /* Adjust this value to reduce space between sidebar and main content */
+}
