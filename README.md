@@ -97,13 +97,14 @@ This project contains the following seven files:
    - Detects and corrects misspelled categorical values to maintain consistency.
    - Performs exploratory data analysis (EDA) using visualizations and detects outliers using methods like IQR and Z-scores.
    - Detects outliers using methods like IQR and Z-scores, then handles them using Winsorization to cap extreme values.
-   - Selects key features based on correlation and domain knowledge, exporting the cleaned and formatted data as domain_related_data.csv for model deployment.
+   - Exporting the cleaned and formatted data as final_data.csv for model deployment.
 
-3. **domain_data_model_3.ipynb**  
-   - The dataset `domain_related_data.csv` is loaded, and its categorical and continuous columns are identified.
+3. **model_3.ipynb**  
+   - The dataset `final_data.csv` is loaded, and its categorical and continuous columns are identified.
    - Categorical columns are encoded using `LabelEncoder`, and mappings are stored for reference.
    - The target variable `price` is separated from features, and the dataset is split into training and testing sets using an 80-20 ratio.
    - Multiple machine learning models are initialized and evaluated (e.g., Linear Regression, Decision Tree, Random Forest, XGBoost).
+   - By using RFE (Recursive Feature Elimination) method, the top features which helps the model to train better is identified. And trained the XgBoost model Using that parameter.
    - Hyperparameter tuning is performed using `RandomizedSearchCV` for the best-performing models.
    - Random Forest and XGBoost are identified as the best-performing models based on Mean Absolute Error (MAE) and R² scores.
    - Hyperparameter tuning is performed using RandomizedSearchCV for both models to optimize parameters such as n_estimators, max_depth, and learning_rate.
@@ -134,18 +135,21 @@ This project contains the following seven files:
 ## How to Run the Code
 1. Run `process_car_data_1.py` using the command: `python process_car_data_1.py` in the terminal.  
 2. Run `data_cleaning_2.ipynb` by selecting **Run All**.  
-3. Run `domain_data_model_3.ipynb` by selecting **Run All**.  
+3. Run `model_3.ipynb` by selecting **Run All**.  
 4. Run `UI_streamlit.py` using the command: `streamlit run UI_streamlit.py`.  
 
 ---
 
 ## Model Score
 - **Score when training the model using default parameters:**  
-  ![image](https://github.com/user-attachments/assets/bdb3e82a-0fcd-4452-8ca6-b82709a842fc)
+ ![image](https://github.com/user-attachments/assets/279f142a-646b-434d-8a67-b3b5bdadc935)
+
  
 - **Score after training the model with the best parameters:**  
-  ![image](https://github.com/user-attachments/assets/e3d366a4-7740-44a2-a496-d73d9f87bebe)
+ ![image](https://github.com/user-attachments/assets/af75f18c-cdde-472d-8bfa-52d7a629bcd3)
+
   
+
 ---
 
 ## Streamlit UI
